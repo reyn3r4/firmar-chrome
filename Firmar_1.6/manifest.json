@@ -1,0 +1,54 @@
+{
+  "name": "Firmar",
+  "description": "Firmar entrada y salida de https://asistencia.xetid.cu, debe haberse aceptado el certificado. El usuario y la contraseña son obligatorios, la hora de salida debe ser posterior a la de entrada, hay que iniciar el servicio dando play y la opcion reintentar si falla pemite que si hay fallo de conexion se intente nuevamente hasta firmar.",
+  "version": "0.1.6",
+  "manifest_version": 3,
+  "background": [
+    {
+      "service_worker": [
+        "main.js"
+      ]
+    },
+    {
+      "service_worker": [
+        "lib/jquery_encrypt.js"
+      ]
+    }
+  ],
+  "options_page": "./popup.html",
+  "host_permissions": [
+    "https://asistencia.xetid.cu/*"
+  ],
+  "permissions": [
+		"webRequest",
+        "activeTab",
+        "tabs",
+        "storage",
+        "scripting"
+  ],
+  "action": {
+    "default_icon": "images/favicon.png",
+    "default_title": "Firma",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "images/favicon.png",
+    "48": "images/apple-touch-icon-57-precomposed.png",
+    "128": "images/apple-touch-icon-114-precomposed.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "/images/bg1.jpg",
+        "/images/favicon.png"
+      ],
+      "matches": [],
+      "extension_ids": []
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
+
+

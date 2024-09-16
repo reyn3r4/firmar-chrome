@@ -1,0 +1,71 @@
+<head><title>Firmar</title>
+    <link rel='stylesheet' href='lib/uikit/dist/css/uikit.min.css'/>
+    <link rel='stylesheet' href='popup.css'/>
+</head>
+<body style="width: 300px;height: 600px;">
+    <div class="uk-card uk-card-default uk-card-body uk-width-1-1 uk-height-1-1" style="background-image: url(images/bg1.jpg) !important;background-position: center;background-size: cover;">
+        <h7 style="display: flex; padding-bottom: 1px; border-bottom: 1px solid #e5e5e5;">
+            <spam>
+                <input type="checkbox" id="sign-it" name="sign-it"></input>Reintentar si falla
+                <button id="toglestart" class="uk-button" title="Iniciar/Detener" style="height: 25px; width: 40px !important; background: none;">
+                    <i class="togleico" uk-icon="icon: play"></i>
+                </button>
+                <i id="togleclock" uk-icon="icon: clock" style="margin-left: 15px;"></i>
+            </spam>
+        </h7>
+        <ul uk-tab>
+            <li class="uk-active">
+                <a href="#" uk-icon="icon: cog" title="Configuraci&oacute;n"></a>
+            </li>
+            <li>
+                <a href="#" uk-icon="icon: code" title="Logs"></a>
+            </li>
+        </ul>
+        <ul class="uk-switcher uk-margin">
+            <li>
+                <form id="form-sign" class="uk-width-1-1">
+                    <div class="uk-margin">
+                        <label class="uk-form-label">Usuario:</label>
+                        <div class="uk-inline uk-width">
+                            <input class="uk-input" name="l-form-username" type="text">
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label">Contrase&ntilde;a:</label>
+                        <div class="uk-inline uk-width">
+                            <input class="uk-input" name="l-form-password" type="password">
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label">D&iacute;as laborables:</label>
+                        <div class="uk-inline uk-width">
+                            <font style="color: yellow;">D</font><input type="checkbox" id="dow0" name="dow" value=0>
+                            <font style="color: green;">L</font><input type="checkbox" id="dow1" name="dow" value=1 checked>
+                            <font style="color: green;">M</font><input type="checkbox" id="dow2" name="dow" value=2 checked>
+                            <font style="color: green;">M</font><input type="checkbox" id="dow3" name="dow" value=3 checked>
+                            <font style="color: green;">J</font><input type="checkbox" id="dow4" name="dow" value=4 checked>
+                            <font style="color: green;">V</font><input type="checkbox" id="dow5" name="dow" value=5 checked>
+                            <font style="color: yellow;">S</font><input type="checkbox" id="dow6" name="dow" value=6>
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" style="margin-right: 36%;">Entrada:</label>
+                        <label class="uk-form-label" for="randomize-ent">Aleatorio:</label>
+                        <input class="uk-input" name="entrada" type="time" style="width:60%;">
+                        <input class="uk-input" name="randomize-ent" id="randomize-ent" type="number" min="1" max="30" style="width:38%;">
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" style="margin-right: 42%;">Salida:</label>
+                        <label class="uk-form-label">Aleatorio:</label>
+                        <input class="uk-input" name="salida" type="time" style="width:60%;">
+                        <input class="uk-input" name="randomize-sal" id="randomize-ent" type="number" min="1" max="30" style="width:38%;">
+                    </div>
+                </form>
+                <button id="savechanges" class="uk-button uk-button-primary uk-margin-small-bottom" uk-icon="icon: check" title="Guardar" disabled style="margin-top: 35px;position: relative;right:-155px;"></button>
+            </li>
+            <li>
+                <button id="clearlogs" class="uk-button" uk-icon="icon: trash" title="Limpiar"></button>
+                <div id="logs"></div>
+            </li>
+        </ul>             
+    </div><script src="lib/jquery_encrypt.js"></script><script src='lib/uikit/dist/js/uikit.min.js'></script><script src='lib/uikit/dist/js/uikit-icons.min.js'></script><script src='popup.js'></script></body>
